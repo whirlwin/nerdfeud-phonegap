@@ -1,13 +1,20 @@
 package no.whirlwin.nerdfeud;
 
+import org.apache.cordova.DroidGap;
+
 import android.app.Activity;
 import android.os.Bundle;
 
-public class NerdfeudActivity extends Activity {
-    /** Called when the activity is first created. */
+/**
+ * 
+ * @author whirlwin
+ *
+ */
+public class Main extends DroidGap {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        super.loadUrl("file:///android_asset/www/index.html");
     }
 }
