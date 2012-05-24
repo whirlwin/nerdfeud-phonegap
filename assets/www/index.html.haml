@@ -2,6 +2,19 @@
 %html
   %head
     %title Nerdfeud
+    %link{ rel: 'css/ext/jquery.mobile-1.1.0.min.css' }
     %script{ src: 'js/ext/cordova-1.7.0.js' }
+    %script{ src: 'jquery-1.7.2.min.js' }
+    %script{ src: 'jquery.mobile-1.1.0.min.js' }
+    %script
+      window.addEventListener('load', function () {
+      document.addEventListener('deviceready', function () {
+      alert("PhoneGap is now loaded!");
+      }, false);
+      }, false);
   %body
-    %div halla balla foo !
+    #home{ data_role: 'page' }
+      %div{ data_role: 'header' }
+        Nerdfeud
+      %a{ src: '#', data_role: 'button' }
+        foobar a
