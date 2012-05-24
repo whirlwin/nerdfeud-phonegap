@@ -2,7 +2,6 @@ package no.whirlwin.nerdfeud;
 
 import org.apache.cordova.DroidGap;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 /**
