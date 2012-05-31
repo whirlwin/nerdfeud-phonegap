@@ -1,2 +1,2 @@
-$(document).on 'pageinit' ->
+$(document).on 'pageinit', ->
   alert 'foobar'
