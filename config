@@ -1,7 +1,7 @@
-#!/usr/bin/ruby
+#!/bin/sh
 
-if File.exist?('local.properties')
-  puts "You are all set! Run 'start'"
+if [ -e "local.properties" ]; then
+  echo "You are already set! Run 'start'"
 else
-  system 'android update project -p .'
-end
+  android update project -p .
+fi
