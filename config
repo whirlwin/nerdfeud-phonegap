@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+if File.exist?('local.properties')
+  puts "You are all set! Run 'start'"
+else
+  system 'android update project -p .'
+end
