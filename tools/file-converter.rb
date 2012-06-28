@@ -1,10 +1,6 @@
 #!/usr/lib/ruby
 
-################################################################################
-#                                                                              #
-# This script converts Haml and CoffeeScript to HTML and JavaScript            #
-#                                                                              #
-################################################################################
+# Simple script for converting Haml and CoffeeScript to HTML and JavaScript
 
 require 'coffee-script'
 require 'haml'
