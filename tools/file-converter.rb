@@ -21,7 +21,5 @@ Dir.glob '**/*' do |file|
     fwrite file, CoffeeScript.compile(File.read(file))
   when '.haml'
     fwrite file, Haml::Engine.new(File.read(file)).render
-  else
-    next
   end
 end
