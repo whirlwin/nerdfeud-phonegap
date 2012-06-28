@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ruby tools/file-converter.rb
+./tools/file-converter
 
 echo Uninstalling Nerdfeud:
 adb -d uninstall no.whirlwin.nerdfeud
