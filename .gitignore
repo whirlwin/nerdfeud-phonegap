@@ -1,6 +1,7 @@
 assets/www/js/*.js
 bin/
 gen/
+local.properties
 *.html
 *.project
 *.swp
