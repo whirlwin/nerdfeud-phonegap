@@ -1,4 +1,4 @@
-#!/usr/lib/ruby
+#!/usr/bin/ruby
 
 # Simple script for converting Haml and CoffeeScript to HTML and JavaScript
 
