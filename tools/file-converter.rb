@@ -2,39 +2,30 @@
 
 ################################################################################
 #                                                                              #
+# This script converts Haml and CoffeeScript to HTML and JavaScript            #
 #                                                                              #
 ################################################################################
 
 require 'coffee-script'
 require 'haml'
 
-file_exts = { 'haml' => 'html', 'coffee'=> 'js' }
-
-puts file_exts['haml']
+$file_exts = { 'haml' => 'html', 'coffee' => 'js' }
 
 def fwrite(name, contents)
+  name.scan /(.+)\.(.+)/ do |base, orig_ext|
+    new_ext = $file_exts[orig_ext]
+    puts "Converting #{name} to #{new_ext}"
+    File.write("#{base}.#{new_ext}", contents)
+  end
 end
 
-Dir.glob '**/*' do |haml_file|
-  case File.extname haml_file
+Dir.glob '**/*' do |file|
+  case File.extname file
   when '.coffee'
-    puts "Converting #{haml_file} to JavaScript"
+    fwrite file, CoffeeScript.compile(File.read(file))
   when '.haml'
-    puts "Converting #{haml_file} to HTML"
-    fwrite haml_file, Haml::Engine.new(File.open(haml_file).read).render
+    fwrite file, Haml::Engine.new(File.read(file)).render
+  else
+    next
   end
 end
-
-
-
-
-
-=begin
-  if (File.extname(haml_file) =~ /\.haml/)
-    puts 'Converting Haml to HTML: ' + haml_file    
-    File.write(
-        haml_file.sub(/(.)\.haml/, '\1.html'),
-        Haml::Engine.new(File.open(haml_file).read).render)
-  end
-end
-=end
