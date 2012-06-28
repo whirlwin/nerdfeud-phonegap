@@ -18,7 +18,7 @@ end
 Dir.glob '**/*' do |file|
   case File.extname file
   when '.coffee'
-    fwrite file, CoffeeScript.compile(File.read file )
+    fwrite file, CoffeeScript.compile(File.read file)
   when '.haml'
     fwrite file, Haml::Engine.new(File.read file).render
   end
