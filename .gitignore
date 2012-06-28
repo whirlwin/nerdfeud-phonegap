@@ -2,4 +2,7 @@ assets/www/js/*.js
 bin/
 gen/
 *.html
+*.project
 *.swp
+.classpath
+.settings/
