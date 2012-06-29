@@ -1,2 +1,3 @@
 $(document).on 'pageinit', ->
-  alert 'foobar'
+  $('#login').click ->
+    alert()

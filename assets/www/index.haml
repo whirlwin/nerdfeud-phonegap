@@ -6,13 +6,13 @@
     %script{ src: 'js/ext/cordova-1.8.1.js' }
     %script{ src: 'js/ext/jquery-1.7.2.min.js' }
     %script{ src: 'js/ext/jquery.mobile-1.1.0.min.js' }
-    %script{ src: 'js/index.coffee' }
+    %script{ src: 'js/index.js' }
   %body
     #home{ 'data-role' => 'page' }
       %div{ 'data-role' => 'header' }
         %h1 Nerdfeud
       %div{ 'data-role' => 'content' }
-        %ul{ 'data-role' => 'listview', 'data-inset' => 'true' }
-          %li Login 
-          %li Settings 
-          %li Help 
+        #menu
+          %a#login{ 'data-role' => 'button' } Login
+          %a{ 'data-role' => 'button' } Settings
+          %a{ 'data-role' => 'button' } Help
