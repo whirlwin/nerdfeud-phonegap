@@ -13,6 +13,13 @@
         %h1 Nerdfeud
       %div{ 'data-role' => 'content' }
         #menu
-          %a#login{ 'data-role' => 'button' } Login
-          %a{ 'data-role' => 'button' } Settings
-          %a{ 'data-role' => 'button' } Help
+          %a#login{ |
+              'href'      => '#login-dialog',  |
+              'data-role' => 'button',   |
+              'data-rel'  => 'dialog' }  |
+            Login
+          %a#settings{ 'data-role' => 'button' } Settings
+          %a#help{ 'data-role' => 'button' } Help
+    #login-dialog
+      %p foobar
+      %a{ 'data-rel' => 'back', 'data-role' => 'button' } Cancel
