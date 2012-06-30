@@ -10,7 +10,7 @@
     %script{ src: 'js/sign-in.js' }
   %body
 
-    #home{ 'data-role' => 'page' }
+    #home{ 'data-role' => 'page', 'data-theme' => 'a' }
       %div{ 'data-role' => 'header' }
         %h1 Nerdfeud
       %div{ 'data-role' => 'content' }
@@ -23,7 +23,7 @@
           %a#settings{ 'data-role' => 'button' } Settings
           %a#help{ 'data-role' => 'button' } Help
 
-    #sign-in-dialog{ 'data-role' => 'page' }
+    #sign-in-dialog{ 'data-role' => 'page', 'data-theme' => 'a' }
       %div{ 'role' => 'dialog' }
         %div{ 'data-role' => 'header', 'role' => 'banner' }
           %h1{ 'role' => 'heading' } Method
