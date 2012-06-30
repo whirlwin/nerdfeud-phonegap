@@ -28,9 +28,9 @@
         %div{ 'data-role' => 'header', 'role' => 'banner' }
           %h1{ 'role' => 'heading' } Method
         %div{ 'data-role' => 'content', 'role' => 'main' }
-          %form#sign-in{ 'action' => '#', 'method' => 'post' }
+          %form#sign-in-form{ 'action' => '#', 'method' => 'post' }
             %div{ 'data-role' => 'fieldcontain' }
-              %fieldset{                         |
+              %fieldset#method-set{              |
                   'data-role' => 'controlgroup', |
                   'data-type' => 'horizontal'    }
                 %input#facebook{             |
@@ -42,6 +42,14 @@
                   %img{                                            |
                       'src' => 'css/ext/images/facebook-icon.png', |
                       'alt' => 'Img error'                         }
+                %input#twitter{             |
+                    'type'    => 'radio',   |
+                    'name'    => 'method',  |
+                    'value'   => 'twitter', }
+                %label{ 'for' => 'twitter' }
+                  %img{                                         |
+                    'src' => 'css/ext/images/twitter-icon.png', |
+                    'alt' => 'Img error'                        }
             %div{ 'data-role' => 'fieldcontain' }
               %input#email{                               |
                   'type'        => 'email',               |
