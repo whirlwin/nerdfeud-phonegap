@@ -5,4 +5,11 @@ $(document).on 'pageinit', ->
 
 signIn = ->
   $.getJSON 'misc/app.json.properties', (data) ->
-    alert(JSON.stringify data)
+    $.ajax({
+      url: """
+           https://graph.facebook.com/oauth/access_token?
+           client_id=#{data.APP_ID}&client_secret=#{data.APP_SECRET}
+           """,
+      success: (s) -> alert('Succ: ' + s),
+      error: (xhr) -> alert(JSON.stringify(xhr))
+    })
