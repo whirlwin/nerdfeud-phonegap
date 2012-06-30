@@ -36,7 +36,9 @@
                     'value'   => 'facebook', |
                     'checked' => 'checked'   }
                 %label{ 'for' => 'facebook' }
-                  %img{ 'src' => 'css/ext/images/facebook-icon.png', 'alt' => 'Img error' }
+                  %img{                                            |
+                      'src' => 'css/ext/images/facebook-icon.png', |
+                      'alt' => 'Img error'                         }
             %div{ 'data-role' => 'fieldcontain' }
               %input#email{                               |
                   'type'        => 'email',               |
@@ -46,3 +48,4 @@
                   'type' => 'password',       |
                   'name' => 'password',       |
                   'placeholder' => 'Password' }
+              %input{ 'type' => 'submit', 'value' => 'Sign in' }
