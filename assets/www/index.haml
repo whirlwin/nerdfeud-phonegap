@@ -13,14 +13,14 @@
         %h1 Nerdfeud
       %div{ 'data-role' => 'content' }
         #menu
-          %a#login{                            |
-              'href'      => '#login-dialog',  |
+          %a#sign-in{                            |
+              'href'      => '#sign-in-dialog',  |
               'data-role' => 'button',         |
               'data-rel'  => 'dialog'          }
-            Login
+            Sign in
           %a#settings{ 'data-role' => 'button' } Settings
           %a#help{ 'data-role' => 'button' } Help
-    #login-dialog{ 'data-role' => 'dialog' }
+    #sign-in-dialog{ 'data-role' => 'dialog' }
       %div{ 'role' => 'dialog' }
         %div{ 'data-role' => 'header', 'role' => 'banner' }
           %h1{ 'role' => 'heading' } Method
