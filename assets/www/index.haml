@@ -9,6 +9,7 @@
     %script{ src: 'js/index.js' }
     %script{ src: 'js/sign-in.js' }
   %body
+
     #home{ 'data-role' => 'page' }
       %div{ 'data-role' => 'header' }
         %h1 Nerdfeud
@@ -16,11 +17,12 @@
         #menu
           %a#sign-in{                            |
               'href'      => '#sign-in-dialog',  |
-              'data-role' => 'button',         |
-              'data-rel'  => 'dialog'          }
+              'data-role' => 'button',           |
+              'data-rel'  => 'dialog'            }
             Sign in
           %a#settings{ 'data-role' => 'button' } Settings
           %a#help{ 'data-role' => 'button' } Help
+
     #sign-in-dialog{ 'data-role' => 'page' }
       %div{ 'role' => 'dialog' }
         %div{ 'data-role' => 'header', 'role' => 'banner' }
