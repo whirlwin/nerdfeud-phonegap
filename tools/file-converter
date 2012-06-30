@@ -11,7 +11,7 @@ def fwrite(name, contents)
   name.scan /(.+)\.(.+)/ do |base, orig_ext|
     new_ext = $file_exts[orig_ext]
     puts "Converted #{name} to #{new_ext}"
-    File.write("#{base}.#{new_ext}", contents)
+    File.write "#{base}.#{new_ext}", contents
   end
 end
 
