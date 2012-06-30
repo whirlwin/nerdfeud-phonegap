@@ -1,11 +1,8 @@
 $(document).on 'pageinit', ->
   $('#sign-in-dialog').on 'pageinit', ->
     $('#submit').click ->
-      getProperties()
-
-getProperties = ->
-  $.get 'misc/app.properties', (data) ->
-    alert data
+      signIn()
 
 signIn = ->
-  alert 'foobar'
+  $.getJSON 'misc/app.json.properties', (data) ->
+    alert(JSON.stringify data)
