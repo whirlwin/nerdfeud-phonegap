@@ -4,6 +4,7 @@ gen/
 local.properties
 *.html
 *.project
+*.properties
 *.swp
 .classpath
 .settings/

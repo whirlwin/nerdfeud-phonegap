@@ -1,4 +1,11 @@
 $(document).on 'pageinit', ->
   $('#sign-in-dialog').on 'pageinit', ->
     $('#submit').click ->
-      alert 'I wanna sign in!'
+      getProperties()
+
+getProperties = ->
+  $.get 'misc/app.properties', (data) ->
+    alert data
+
+signIn = ->
+  alert 'foobar'
