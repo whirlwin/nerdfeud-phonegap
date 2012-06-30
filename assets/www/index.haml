@@ -7,6 +7,7 @@
     %script{ src: 'js/ext/jquery-1.7.2.min.js' }
     %script{ src: 'js/ext/jquery.mobile-1.1.0.min.js' }
     %script{ src: 'js/index.js' }
+    %script{ src: 'js/sign-in.js' }
   %body
     #home{ 'data-role' => 'page' }
       %div{ 'data-role' => 'header' }
@@ -20,12 +21,12 @@
             Sign in
           %a#settings{ 'data-role' => 'button' } Settings
           %a#help{ 'data-role' => 'button' } Help
-    #sign-in-dialog{ 'data-role' => 'dialog' }
+    #sign-in-dialog{ 'data-role' => 'page' }
       %div{ 'role' => 'dialog' }
         %div{ 'data-role' => 'header', 'role' => 'banner' }
           %h1{ 'role' => 'heading' } Method
         %div{ 'data-role' => 'content', 'role' => 'main' }
-          %form
+          %form#sign-in{ 'action' => '#', 'method' => 'post' }
             %div{ 'data-role' => 'fieldcontain' }
               %fieldset{                         |
                   'data-role' => 'controlgroup', |
@@ -48,4 +49,4 @@
                   'type' => 'password',       |
                   'name' => 'password',       |
                   'placeholder' => 'Password' }
-              %input{ 'type' => 'submit', 'value' => 'Sign in' }
+              %a#submit{ 'href' => '#', 'data-role' => 'button' } Sign in
