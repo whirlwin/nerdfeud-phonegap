@@ -20,6 +20,8 @@
             Login
           %a#settings{ 'data-role' => 'button' } Settings
           %a#help{ 'data-role' => 'button' } Help
-    #login-dialog
-      %p foobar
-      %a{ 'data-rel' => 'back', 'data-role' => 'button' } Cancel
+    #login-dialog{ 'data-role' => 'dialog' }
+      %div{ 'role' => 'dialog' }
+        %div{ 'data-role' => 'header', 'role' => 'banner' }
+          %h1{ 'role' => 'heading' } Method
+        %div{ 'data-role' => 'content', 'role' => 'main' }
