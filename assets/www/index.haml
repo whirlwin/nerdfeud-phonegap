@@ -3,6 +3,7 @@
   %head
     %title Nerdfeud
     %link{ rel: 'stylesheet', href: 'css/ext/jquery.mobile-1.1.0.min.css' }
+    %link{ rel: 'stylesheet', href: 'css/ext/flurid.min.css' }
     %link{ rel: 'stylesheet', href: 'css/game-list.css' }
     %script{ src: 'js/ext/cordova-1.8.1.js' }
     %script{ src: 'js/ext/jquery-1.7.2.min.js' }
@@ -79,11 +80,15 @@
         %h1 Games
       %div{ 'data-role' => 'content' }
         %div
-          %a{ 'href' => '#', 'data-role' => 'button', 'data-rel' => 'dialog' } New
+          %a{                                     |
+               'href'      => '#new-game-dialog', |
+               'data-role' => 'button',           |
+               'data-rel'  => 'dialog'            }
+            New
         %div
           %ul{ 'data-role' => 'listview', 'data-inset' => 'true' }
             %li
-              %a{ 'href' => '#' }
+              %a{ 'href' => '#game-board' }
                 %div.icon-wrapper
                   %img{ 'src' => 'css/ext/images/default-user.png' }
                 %div
@@ -139,4 +144,225 @@
                 %div
                   %h3 Some user
                   %p Your turn
+
+    #new-game-dialog{ 'data-role' => 'page', 'data-theme' => 'a' }
+      %div{ 'role' => 'dialog' }
+        %div{ 'data-role' => 'header', 'role' => 'banner' }
+          %h1{ 'role' => 'heading' } New game
+        %div{ 'data-role' => 'content', 'role' => 'main' }
+          %form
+            %a#random-opponent{ 'href' => '#', 'data-role' => 'button' } Random opponent
+    #game-board{ 'data-role' => 'page', 'data-theme' => 'a' }
+      %div{ 'data-role' => 'content' }
+        .flurid
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+          .row
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
+            .column.width_1-10
+              X
 
