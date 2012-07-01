@@ -4,8 +4,9 @@
 
 require 'coffee-script'
 require 'haml'
+require 'sass'
 
-$file_exts = { 'haml' => 'html', 'coffee' => 'js' }
+$file_exts = { 'coffee' => 'js', 'haml' => 'html', 'scss' => 'css' }
 
 def fwrite(name, contents)
   name.scan /(.+)\.(.+)/ do |base, orig_ext|
@@ -16,10 +17,12 @@ def fwrite(name, contents)
 end
 
 Dir.glob '**/*' do |file|
-  case File.extname file
-  when '.coffee'
+  case File.extname(file)[1..-1]
+  when 'coffee'
     fwrite file, CoffeeScript.compile(File.read file)
-  when '.haml'
+  when 'haml'
     fwrite file, Haml::Engine.new(File.read file).render
+  when 'scss'
+    fwrite file, Sass.compile(File.read file)
   end
 end

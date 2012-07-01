@@ -3,6 +3,7 @@
   %head
     %title Nerdfeud
     %link{ rel: 'stylesheet', href: 'css/ext/jquery.mobile-1.1.0.min.css' }
+    %link{ rel: 'stylesheet', href: 'css/game-list.css' }
     %script{ src: 'js/ext/cordova-1.8.1.js' }
     %script{ src: 'js/ext/jquery-1.7.2.min.js' }
     %script{ src: 'js/ext/jquery.mobile-1.1.0.min.js' }
@@ -83,9 +84,11 @@
           %ul{ 'data-role' => 'listview', 'data-inset' => 'true' }
             %li
               %a{ 'href' => '#' }
-                %img{ 'src' => 'css/ext/images/default-user.png' }
-                %h3 Some user
-                %p Your turn
+                %div.icon-wrapper
+                  %img{ 'src' => 'css/ext/images/default-user.png' }
+                %div.text-wrapper
+                  %h3 Some user
+                  %p Your turn
             %li
               %a{ 'href' => '#' } Game 2
             %li

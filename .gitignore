@@ -1,4 +1,6 @@
 assets/www/js/*.js
+assets/www/css/*.css
+assets/www/css/.sass-cache/
 bin/
 gen/
 local.properties
