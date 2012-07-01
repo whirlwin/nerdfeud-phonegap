@@ -71,4 +71,46 @@
                   'type' => 'password',       |
                   'name' => 'password',       |
                   'placeholder' => 'Password' }
-              %a#submit{ 'href' => '#', 'data-role' => 'button' } Sign in
+              %a#submit{ 'href' => '#game-list', 'data-role' => 'button' } Sign in
+
+    #game-list{ 'data-role' => 'page', 'data-theme' => 'a' }
+      %div{ 'data-role' => 'header' }
+        %h1 Games
+      %div{ 'data-role' => 'content' }
+        %div
+          %a{ 'href' => '#', 'data-role' => 'button', 'data-rel' => 'dialog' } New
+        %div
+          %ul{ 'data-role' => 'listview', 'data-inset' => 'true' }
+            %li
+              %a{ 'href' => '#' }
+                %img{ 'src' => 'css/ext/images/default-user.png' }
+                %h3 Some user
+                %p Your turn
+            %li
+              %a{ 'href' => '#' } Game 2
+            %li
+              %a{ 'href' => '#' } Game 3
+            %li
+              %a{ 'href' => '#' } Game 4
+            %li
+              %a{ 'href' => '#' } Game 5
+            %li
+              %a{ 'href' => '#' } Game 1
+            %li
+              %a{ 'href' => '#' } Game 2
+            %li
+              %a{ 'href' => '#' } Game 3
+            %li
+              %a{ 'href' => '#' } Game 4
+            %li
+              %a{ 'href' => '#' } Game 5
+            %li
+              %a{ 'href' => '#' } Game 1
+            %li
+              %a{ 'href' => '#' } Game 2
+            %li
+              %a{ 'href' => '#' } Game 3
+            %li
+              %a{ 'href' => '#' } Game 4
+            %li
+              %a{ 'href' => '#' } Game 5

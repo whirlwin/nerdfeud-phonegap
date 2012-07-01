@@ -10,7 +10,8 @@ $(document).on 'pageinit', ->
     refreshComponents()
 
     $('#submit').click ->
-      signIn()
+      #signIn()
+      # TODO: Create some fancy sign in logic
 
   signIn = ->
     $.getJSON 'misc/app.json.properties', (data) ->
