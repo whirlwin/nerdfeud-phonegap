@@ -5,11 +5,15 @@
     %link{ rel: 'stylesheet', href: 'css/ext/jquery.mobile-1.1.0.min.css' }
     %link{ rel: 'stylesheet', href: 'css/ext/flurid.min.css' }
     %link{ rel: 'stylesheet', href: 'css/game-list.css' }
+    %link{ rel: 'stylesheet', href: 'css/game-board.css' }
     %script{ src: 'js/ext/cordova-1.8.1.js' }
     %script{ src: 'js/ext/jquery-1.7.2.min.js' }
+    %script{ src: 'js/ext/jquery-ui-1.8.21.custom.min.js' }
+    %script{ src: 'js/ext/jquery.ui.touch-punch.min.js' }
     %script{ src: 'js/ext/jquery.mobile-1.1.0.min.js' }
     %script{ src: 'js/index.js' }
     %script{ src: 'js/sign-in.js' }
+    %script{ src: 'js/game-board.js' }
   %body
 
     #home{ 'data-role' => 'page', 'data-theme' => 'a' }
@@ -151,218 +155,101 @@
           %h1{ 'role' => 'heading' } New game
         %div{ 'data-role' => 'content', 'role' => 'main' }
           %form
-            %a#random-opponent{ 'href' => '#', 'data-role' => 'button' } Random opponent
+            %a#random-opponent{ 'href' => '#', 'data-role' => 'button' }
+              Random opponent
+
     #game-board{ 'data-role' => 'page', 'data-theme' => 'a' }
       %div{ 'data-role' => 'content' }
         .flurid
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
           .row
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
+            .column.width_1-6
               X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-          .row
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-          .row
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-          .row
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
-              X
-            .column.width_1-10
+            .column.width_1-6
               X
 
