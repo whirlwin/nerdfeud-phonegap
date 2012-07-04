@@ -1,4 +1,6 @@
 $('#game-board').live 'pageinit', ->
+  counter = 0
+
   $('.letter').draggable
     opacity: 0.35,
     revert:  true,
@@ -6,6 +8,7 @@ $('#game-board').live 'pageinit', ->
     zIndex:  2700
 
   $('.column').droppable
-    accept:    '.letter',
-    drop:      (e, ui) ->
-      $(this).append ui.draggable
+    accept: '.letter',
+    greedy: true,
+    drop:   (e, ui) ->
+        $(this).droppable 'disable'
