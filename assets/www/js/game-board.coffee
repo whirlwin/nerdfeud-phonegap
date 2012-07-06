@@ -8,7 +8,9 @@ $('#game-board').live 'pageinit', ->
     zIndex:  2700
 
   $('.column').droppable
-    accept: '.letter',
     greedy: true,
     drop:   (e, ui) ->
-        $(this).droppable 'disable'
+        $(this).droppable 'option', 'accept', ui.draggable
+        $(this).append ui.draggable
+    out:    (e, ui) ->
+        $(this).droppable 'option', 'accept', '.letter'
