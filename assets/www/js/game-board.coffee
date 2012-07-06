@@ -1,5 +1,4 @@
 $('#game-board').live 'pageinit', ->
-  counter = 0
 
   $('.letter').draggable
     opacity: 0.35,
