@@ -8,12 +8,13 @@ refreshComponents = ->
 signInDialog.live 'pageinit', ->
   refreshComponents()
 
-  $('#submit').click ->
-    #signIn()
-    # TODO: Create some fancy sign in logic
+  $('#sign-in-form').submit ->
+    signIn()
+    false
 
 signIn = ->
   $.getJSON 'misc/app.json.properties', (data) ->
+    alert()
     $.ajax({
       url: """
            https://graph.facebook.com/oauth/access_token?

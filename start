@@ -9,3 +9,6 @@ ant debug install
 
 echo Starting Nerdfeud:
 adb -d shell am start -n no.whirlwin.nerdfeud/.Main
+
+echo Showing logcat errors:
+adb logcat "*:E"
