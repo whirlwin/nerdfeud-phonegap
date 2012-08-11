@@ -14,7 +14,6 @@ signInDialog.live 'pageinit', ->
 
 signIn = ->
   $.getJSON 'misc/app.json.properties', (data) ->
-    alert()
     $.ajax({
       url: """
            https://graph.facebook.com/oauth/access_token?
