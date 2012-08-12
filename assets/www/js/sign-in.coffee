@@ -9,7 +9,8 @@ signInDialog.live 'pageinit', ->
   refreshComponents()
 
   $('#sign-in-form').submit ->
-    signIn()
+
+    window.plugins.childBrowser.showWebPage 'http://www.vg.no/', { showLocationBar: true }
     false
 
 signIn = ->
