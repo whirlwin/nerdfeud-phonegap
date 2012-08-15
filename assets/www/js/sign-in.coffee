@@ -1,25 +1,30 @@
 signInDialog = $('#sign-in-dialog')
 
+providers = {}
+
 refreshComponents = ->
   signInDialog.live 'pageshow', ->
     $('#sign-in-form :input[type="radio"]').each ->
       $(this).checkboxradio 'refresh'
 
+signInToFacebook = ->
+  alert true
+
 signInDialog.live 'pageinit', ->
   refreshComponents()
+  getProviders()
 
   $('#sign-in-form').submit ->
 
-    window.plugins.childBrowser.showWebPage 'http://www.vg.no/', { showLocationBar: true }
+    checkedValue = $('input[name=method]:checked', $ this).val()
+    appId        = providers[checkedValue].appId
+
+    eval "signInTo#{checkedValue[0].toUpperCase() + checkedValue[1..]}()"
+
     false
 
-signIn = ->
-  $.getJSON 'misc/app.json.properties', (data) ->
-    $.ajax({
-      url: """
-           https://graph.facebook.com/oauth/access_token?
-           client_id=#{data.APP_ID}&client_secret=#{data.APP_SECRET}
-           """,
-      success: (s) -> alert('Succ: ' + s),
-      error: (xhr) -> alert(JSON.stringify(xhr))
-    })
+getProviders = ->
+  $.getJSON 'misc/credentials.json', (data) ->
+    providers = data
+
+
