@@ -37,7 +37,7 @@ bindFacebookLocationChange = ->
     token = loc.match /http:\/\/example.org\/#access_token=(\w+)&.*/
     token = token[1].slice 1 unless token == null
 
-    finish(token) unless token == null
+    finish token unless token == null
 
 finish = (token) ->
   window.plugins.childBrowser.close()
