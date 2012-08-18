@@ -2,10 +2,10 @@
 Nerdfeud is a pet project and a game.
 
 ## Prerequisites
-- Git         - *
-- Java        - 7
-- Android SDK - Version 10
-- Ruby        - 1.9.3
+- Git
+- Java 7
+- Android SDK version 10
+- Ruby 1.9.3
 
 ## Setup
 Clone this repository
