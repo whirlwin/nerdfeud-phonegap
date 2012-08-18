@@ -13,3 +13,8 @@ Navigate into the project's directory, configure and start the application.
 >     cd nerdfeud
 >     ./config
 >     ./start
+
+## Known issues
+When trying to build the project, a NullPointerException may occur.
+This is most likely due to Ant, and you will have to run:
+>     rm -rf bin/ gen/

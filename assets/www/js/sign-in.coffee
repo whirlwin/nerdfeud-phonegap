@@ -2,24 +2,21 @@ providers = {}
 
 signInDialog = $('#sign-in-dialog')
 
+signInDialog.live 'pageinit', ->
+  refreshComponents()
+
+  $.getJSON 'misc/credentials.json', (data) -> providers = data
+
+  $('#sign-in-form').submit ->
+    switch $('input[name=method]:checked', $ this).val()
+      when 'facebook' then finish 'foobar' #*signInToFacebook()
+
+    false
+
 refreshComponents = ->
   signInDialog.live 'pageshow', ->
     $('#sign-in-form :input[type="radio"]').each ->
       $(this).checkboxradio 'refresh'
-
-signInDialog.live 'pageinit', ->
-  refreshComponents()
-  fetchProviders()
-
-  $('#sign-in-form').submit ->
-    switch $('input[name=method]:checked', $ this).val()
-      when 'facebook' then signInToFacebook()
-
-    false
-
-fetchProviders = ->
-  $.getJSON 'misc/credentials.json', (data) ->
-    providers = data
 
 signInToFacebook = ->
   window.plugins.childBrowser.showWebPage(
@@ -30,6 +27,10 @@ client_id=#{providers['facebook'].appId}
 &display=touch",
     { showLocationBar: false })
 
+  bindFacebookLocationChange()
+
+
+bindFacebookLocationChange = ->
   window.plugins.childBrowser.onLocationChange = (loc) ->
 
     # Extract the token
@@ -40,3 +41,9 @@ client_id=#{providers['facebook'].appId}
 
 finish = (token) ->
   window.plugins.childBrowser.close()
+
+  # sessionStorage vs localStorage
+  localStorage.setItem 'token', token
+
+  $('#sign-in-dialog').dialog 'close'
+  $.mobile.changePage '#game-list'
