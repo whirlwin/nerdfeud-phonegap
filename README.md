@@ -11,8 +11,7 @@ Clone this repository
 
 Navigate into the project's directory, configure and start the application.
 >     cd nerdfeud
->     ./config
->     ./start
+>     ./config && ./start
 
 ## Known issues
 When trying to build the project, a NullPointerException may occur.
