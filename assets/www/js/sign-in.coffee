@@ -52,7 +52,6 @@ bindFacebookLocationChange = ->
 postUserInformation = (token, f) ->
   $.getJSON "https://graph.facebook.com/me&access_token=#{token}", (user) ->
 
-
 finish = (provider, token) ->
   localStorage.setItem "token#{provider}", token
 
