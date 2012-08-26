@@ -12,7 +12,7 @@ signInDialog.live 'pageinit', ->
 
     switch $('input[name=method]:checked', $ this).val()
       when 'facebook' then dbHelper.init ->
-        dbHelper.retrieveToken 'facebook', finish, signInToFacebook
+        dbHelper.retrieveToken 'facebook', signInToFacebook
 
     false
 
@@ -43,13 +43,17 @@ bindFacebookLocationChange = ->
     unless token == null
       window.plugins.childBrowser.close()
 
-      token = token[1].slice 1
+      token = token[1]
 
       dbHelper.persistToken 'facebook', token, ->
-        finish('facebook', token)
+        postUserInformation, token, ->
+          finish 'facebook', token
+
+postUserInformation = (token, f) ->
+  $.getJSON "https://graph.facebook.com/me&access_token=#{token}", (user) ->
+
 
 finish = (provider, token) ->
-
   localStorage.setItem "token#{provider}", token
 
   $.mobile.loading 'hide'
@@ -71,11 +75,9 @@ dbHelper = (->
       ,(tx, err) ->
         alert JSON.stringify(tx)
       ,->
-        alert 'success'
-
         f()
 
-    ,'retrieveToken': (provider, finish, signIn) ->
+    ,'retrieveToken': (provider, signIn) ->
       db.transaction (tx) ->
         tx.executeSql "SELECT * FROM tokens WHERE provider = \"#{provider}\"", [], (tx, tokens) ->
           finish 'provider', tokens[0]
