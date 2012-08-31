@@ -46,11 +46,12 @@ bindFacebookLocationChange = ->
       token = token[1]
 
       dbHelper.persistToken 'facebook', token, ->
-        postUserInformation, token, ->
+        postUserInformation token, ->
           finish 'facebook', token
 
 postUserInformation = (token, f) ->
   $.getJSON "https://graph.facebook.com/me&access_token=#{token}", (user) ->
+    alert JSON.stringify(user)
 
 finish = (provider, token) ->
   localStorage.setItem "token#{provider}", token
