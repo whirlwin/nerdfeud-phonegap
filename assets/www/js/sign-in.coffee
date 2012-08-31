@@ -51,7 +51,7 @@ bindFacebookLocationChange = ->
 
 postUserInformation = (token, f) ->
   $.getJSON "https://graph.facebook.com/me&access_token=#{token}", (user) ->
-    alert JSON.stringify(user)
+    navigator.notification.alert JSON.stringify(user), null
 
 finish = (provider, token) ->
   localStorage.setItem "token#{provider}", token
@@ -73,7 +73,7 @@ dbHelper = (->
         tx.executeSql 'CREATE TABLE IF NOT EXISTS tokens (provider, token)'
         tx.executeSql "INSERT INTO tokens (provider, token) VALUES (\"#{provider}\", \"#{token}\")"
       ,(tx, err) ->
-        alert JSON.stringify(tx)
+        navigator.notification.alert JSON.stringify(tx), null
       ,->
         f()
 
