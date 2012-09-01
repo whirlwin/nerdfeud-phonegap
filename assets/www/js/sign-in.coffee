@@ -50,8 +50,15 @@ bindFacebookLocationChange = ->
           finish 'facebook', token
 
 postUserInformation = (token, f) ->
-  $.getJSON "https://graph.facebook.com/me&access_token=#{token}", (user) ->
-    navigator.notification.alert JSON.stringify(user), null
+  $.getJSON("https://graph.facebook.com/me&access_token=#{token}", (user) ->
+    $.ajax({
+      url:     '192.168.1.95:3000/users',
+      type:    'POST',
+      data:    user,
+      success: -> f(),
+      error:   (xhr) -> navigator.notification.alert JSON.stringify(xhr)
+    })
+  )
 
 finish = (provider, token) ->
   localStorage.setItem "token#{provider}", token
